@@ -1,0 +1,71 @@
+body {
+  background-color: #1AB8DF
+
+  /*width: 100%;*/
+  /*height: 560px;*/
+  background-image: url('../img/header.jpg');
+  background-size: contain;
+  background-repeat: no-repeat;
+  padding-top: 150px;
+}
+
+.game-banner {
+  width: 100%;
+  height: 560px;
+  background-image: url('../img/header.jpg');
+  background-size: cover;
+  background-repeat: no-repeat;
+  padding: 0;
+}
+
+
+.board {
+  background: #FE465C;
+  border-radius: 15px;
+  padding: 10px;
+  width: 750px; /*good size for a game.*/
+  margin: 0 auto; /*centers everything horizontally*/
+}
+
+/*to clear each tile*/
+.clearfix {
+  clear: both;
+}
+
+
+/*CSS for Rows*/
+/* custom row class not to be confused with bootstrap*/
+/*.row {
+  height: 100%;
+  width: 100%;
+}*/
+
+
+.cell {
+  background: rgba(225, 226, 241, 0.5);
+  border-radius: 15px;
+  box-sizing: border-box;
+  width: 130px;
+  height: 130px;
+  float: left; /*floated left so they stack up*/
+  margin: 10px;
+
+}
+
+.ship-cell {
+  background-image: url('../img/shot.jpg');
+  background-size: auto;
+  background-repeat: no-repeat;
+  border-radius: 15px;
+  box-sizing: border-box;
+  height: 130px;
+  float: left;
+  margin: 10px;
+  width: 130px;
+}
+
+
+/*to clear each tile*/
+.clearfix {
+  clear: both;
+}
