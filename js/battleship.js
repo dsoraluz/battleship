@@ -20,19 +20,57 @@ this.referenceBoard = [['null', 'null', 'null', 'null', 'null'], // 0
   this.hasWon = false;
 
 
-  console.log("new Game created in the constructor,");
   this._placeShip();
-  console.log("ship placed in the constructor");
 }
 
+//
+// var newGame = new Battleship();
+// console.log(this.board);
 
 
 
-Battleship.prototype._makeBoard = function () {
+Battleship.prototype._sendHit = function (row, column) {
 
+  if (this.board[row][column] === 'o'){
+    this.referenceBoard[row][column] = 'x';
+    console.log("That was a hit!");
+
+    // if (this._shipSunk){
+    //   console.log("You have sunk my battleship!");
+    // }
+
+    console.log(this.referenceBoard);
+  }
+  else{
+    this.referenceBoard[row][column] = '?';
+    console.log("That was a miss.");
+    console.log(this.referenceBoard);
+  }
 
 
 };
+
+Battleship.prototype._shipSunk = function(){
+
+  this.board.forEach(function(row, rowIndex){
+    row.forEach(function(col, colIndex){
+      if (col === 'o'){
+      return false;
+    }
+    else{
+      return true;
+    }
+    });
+  });
+
+};
+
+
+//Public function that user will interact to execute game logic.
+Battleship.prototype.play = function () {
+
+};
+
 
 Battleship.prototype._placeShip = function(){
 
@@ -250,9 +288,3 @@ else if (shipLength == 2){
 //
 //   return emptySpaces[randomIndex];
 // };
-
-
-//Public function that user will interact to execute game logic.
-Battleship.prototype.play = function () {
-
-};

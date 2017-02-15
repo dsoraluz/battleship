@@ -1,12 +1,12 @@
 body {
-  background-color: #1AB8DF
+  /*background-color: #1AB8DF*/
 
   /*width: 100%;*/
   /*height: 560px;*/
-  background-image: url('../img/header.jpg');
+  /*background-image: url('../img/header.jpg');
   background-size: contain;
   background-repeat: no-repeat;
-  padding-top: 150px;
+  padding-top: 560px;*/
 }
 
 .game-banner {
