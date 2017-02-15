@@ -1,11 +1,10 @@
 function Battleship(){
-  this.player = '';
                       // 0       1       2        3       4
-  this.board = [['null', 'null', 'null', 'null', 'null'], // 0
-                      ['null', 'null', 'null', 'null', 'null'],  // 1
-                      ['null', 'null', 'null', 'null', 'null'],  // 2
-                      ['null', 'null', 'null', 'null', 'null'],  // 3
-                      ['null', 'null', 'null', 'null', 'null']   // 4
+  this.board =        [['o', 'null', 'null', 'null', 'o'], // 0
+                      ['o', 'null', 'null', 'null', 'o'],  // 1
+                      ['o', 'null', 'null', 'null', 'null'],  // 2
+                      ['o', 'null', 'o', 'o', 'o'],  // 3
+                      ['o', 'null', 'null', 'null', 'null']   // 4
                     ];
 
                         // 0       1       2        3       4
@@ -19,13 +18,11 @@ this.referenceBoard = [['null', 'null', 'null', 'null', 'null'], // 0
 
   this.hasWon = false;
 
+  this.hitCounter = 0;
 
-  this._placeShip();
+
+  // this._placeShip();
 }
-
-//
-// var newGame = new Battleship();
-// console.log(this.board);
 
 
 
@@ -33,11 +30,9 @@ Battleship.prototype._sendHit = function (row, column) {
 
   if (this.board[row][column] === 'o'){
     this.referenceBoard[row][column] = 'x';
-    console.log("That was a hit!");
+    this.hitCounter += 1;
+    alert("That was a hit!");
 
-    // if (this._shipSunk){
-    //   console.log("You have sunk my battleship!");
-    // }
 
     console.log(this.referenceBoard);
   }
@@ -47,10 +42,15 @@ Battleship.prototype._sendHit = function (row, column) {
     console.log(this.referenceBoard);
   }
 
+  if (this.hitCounter===10){
+    alert("Congradulations! All enemy battleships have been destroyed!");
+  }
+
 
 };
 
 Battleship.prototype._shipSunk = function(){
+
 
   this.board.forEach(function(row, rowIndex){
     row.forEach(function(col, colIndex){
@@ -90,6 +90,79 @@ Battleship.prototype._placeShip = function(){
   }
 
 
+};
+
+Battleship.prototype._randomBoardGenerator = function(){
+                    // 0       1       2        3       4
+var boardOne =      [['o', 'null', 'null', 'null', 'o'], // 0
+                    ['o', 'null', 'null', 'null', 'o'],   // 1
+                    ['o', 'null', 'null', 'null', 'null'],   // 2
+                    ['o', 'null', 'o', 'o', 'o'],   // 3
+                    ['o', 'null', 'null', 'null', 'null']    // 4
+                  ];
+
+var boardTwo =      [['null', 'o', 'null', 'null', 'null'], // 0
+                    ['null', 'o', 'null', 'null', 'o'],   // 1
+                    ['null', 'o', 'null', 'null', 'o'],   // 2
+                    ['null', 'o', 'null', 'null', 'null'],   // 3
+                    ['null', 'o', 'o', 'o', 'o']    // 4
+                  ];
+
+var boardThree =    [['null', 'null', 'null', 'null', 'o'], // 0
+                    ['null', 'o', 'o', 'null', 'o'],   // 1
+                    ['null', 'null', 'null', 'null', 'o'],   // 2
+                    ['null', 'null', 'null', 'null', 'null'],   // 3
+                    ['o', 'o', 'o', 'o', 'o']    // 4
+                  ];
+
+var boardFour =      [['o', 'o', 'o', 'o', 'o'], // 0
+                     ['null', 'null', 'null', 'null', 'null'],   // 1
+                     ['null', 'null', 'o', 'null', 'null'],   // 2
+                     ['null', 'null', 'o', 'null', 'o'],   // 3
+                     ['null', 'null', 'o', 'null', 'o']    // 4
+                  ];
+
+var boardFive =      [['null', 'null', 'o', 'null', 'null'], // 0
+                    ['null', 'null', 'o', 'null', 'o'],   // 1
+                    ['o', 'o', 'o', 'null', 'o'],   // 2
+                    ['null', 'null', 'o', 'null', 'o'],   // 3
+                    ['null', 'null', 'o', 'null', 'null']    // 4
+                  ];
+
+var randomBoards = [];
+randomBoards.push(boardOne,boardTwo, boardThree, boardFour, boardFive);
+
+var randomIndex = Math.floor(Math.random()*5);
+
+var boardToReturn = randomBoards[randomIndex];
+
+var randomNumber = Math.random()*1;
+
+//50/ 50 chance of transposing board to add to randomness.
+if (randomNumber > 0.5){
+  for (var row = 0; row < boardToReturn.length; row++) {
+    for (var column = row+1; column < boardToReturn.length; column++) {
+      var temp = boardToReturn[row][column];
+      boardToReturn[row][column] = boardToReturn[column][row];
+      boardToReturn[column][row] = temp;
+    }
+  }
+}
+
+return boardToReturn;
+};
+
+// Function to transpose a matrix
+///1.Flip on Y axis
+//2. Turn 90 degrees counter clockwise.
+Battleship.prototype._transposeMatrix = function () {
+  for (var row = 0; row < this.board.length; row++) {
+    for (var column = row+1; column < this.board.length; column++) {
+      var temp = this.board[row][column];
+      this.board[row][column] = this.board[column][row];
+      this.board[column][row] = temp;
+    }
+  }
 };
 
 
