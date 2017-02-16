@@ -18,6 +18,7 @@ this.referenceBoard = [['null', 'null', 'null', 'null', 'null'], // 0
 
   this.hasWon = false;
 
+  this.initialTries = 15;
   this.hitCounter = 0;
 
 
@@ -31,7 +32,6 @@ Battleship.prototype._sendHit = function (row, column) {
   if (this.board[row][column] === 'o'){
     this.referenceBoard[row][column] = 'x';
     this.hitCounter += 1;
-    alert("That was a hit!");
 
 
     console.log(this.referenceBoard);
@@ -43,7 +43,7 @@ Battleship.prototype._sendHit = function (row, column) {
   }
 
   if (this.hitCounter===10){
-    alert("Congradulations! All enemy battleships have been destroyed!");
+    alert("Congradulations! You passed Level 1!");
   }
 
 

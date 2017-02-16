@@ -1,39 +1,53 @@
 body {
   background-color: grey;
-
-  /*background-image: url('../img/page-background.jpg');*/
-  background-size: contain;
-  background-repeat: no-repeat;
+  color: #22313f;
 }
 
 
-h1 {
-  text-align: center;
+.level-number-container {
+  /*makes tag not super greedy*/
+  width: 100px;
+  border: 2px solid;
+  border-radius: 15px;
+  padding: 5px 20px;
+  font-size: 30px;
+  margin-bottom: 10px;
+  float: left;
 }
+
+
+
+.tries-number-container {
+  /*makes tag not super greedy*/
+  width: 115px;
+  border: 2px solid;
+  border-radius: 15px;
+  padding: 5px 20px;
+  font-size: 30px;
+  float:right;
+  margin-bottom: 10px;
+
+}
+
+.level-1-container{border-color: #1AB8DF;}
+.level-2-container{border-color: #2ECC71;}
+.level-3-container{border-color: #F1C70F;}
+.level-4-container{border-color: #F39C12;}
+.level-5-container{border-color: #FE465C;}
 
 
 .centering-container {
+  width: 1655px;
   margin-left: 105px;
 }
 
-.ref-board-label-container {
-  border-style: dotted;
-}
 
-.ref-board-label {
-  border-style: dotted;
-  margin: 0 auto;
-  color: white;
-}
 
 .reference-board {
-  background: #1AB8DF;
   border-radius: 15px;
   padding: 10px;
   width: 750px; /*good size for a game.*/
   float: left;
-  /*display: inline;*/
-  /*margin: 0 auto;*/
 }
 
 
@@ -44,22 +58,7 @@ h1 {
   width: 750px; /*good size for a game.*/
   margin-left: 50px;
   float: left;
-  /*display: inline;*/
-  /*margin: 0 auto;*/
 }
-
-/*to clear each tile*/
-.clearfix {
-  clear: both;
-}
-
-
-/*CSS for Rows*/
-/* custom row class not to be confused with bootstrap*/
-/*.row {
-  height: 100%;
-  width: 100%;
-}*/
 
 
 .cell {
@@ -102,30 +101,13 @@ box-shadow: 0 1px 8px black;
   width: 130px;
 }
 
-.miss-cell {
-  background-image: url('../img/miss.png');
-  background-size: contain;;
-  background-repeat: no-repeat;
-  border-radius: 15px;
-  box-sizing: border-box;
-  height: 130px;
-  float: left;
-  margin: 10px;
-  width: 130px;
-}
-
-
+.level-1{background-color: #1AB8DF;}
+.level-2{background-color: #2ECC71;}
+.level-3{background-color: #F1C70F;}
+.level-4{background-color: #F39C12;}
+.level-5{background-color: #FE465C;}
 
 /*to clear each tile*/
 .clearfix {
   clear: both;
-}
-
-.send-hitcontainer {
-  clear: both;
-}
-
-.send-hit-row {
-  width: 500px;
-  margin: 0 auto;
 }
