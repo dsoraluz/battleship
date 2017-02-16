@@ -61,23 +61,24 @@ function renderReferenceBoard(){
 
     if(!($(this).hasClass('hit-cell'))){
 
-    myGlobalGame._sendHit(rowIndex,colIndex);
+      myGlobalGame._sendHit(rowIndex,colIndex);
 
-    numberOfTries -= 1;
-    $('.tries').html(numberOfTries);
+      numberOfTries -= 1;
+      $('.tries').html(numberOfTries);
+      $('.tiles-left').html(myGlobalGame.tilesUndiscovered);
 
 
-    if (myGlobalGame.hitCounter === 10){
-      newLevel();
-    }
+      if (myGlobalGame.hitCounter === 10){
+        newLevel();
+      }
 
-    if(numberOfTries === 0)
-    {
-      $('.game-over-modal').show();
-    }
+      if(numberOfTries === 0)
+      {
+        $('.game-over-modal').show();
+      }
 
-    renderReferenceBoard();
-    renderBoard();
+      renderReferenceBoard();
+      renderBoard();
     }
   });
 }
@@ -86,6 +87,8 @@ function renderReferenceBoard(){
 function newLevel(){
 
   myGlobalGame.hitCounter = 0;
+  myGlobalGame.tilesUndiscovered = 10;
+  $('.tiles-left').html(myGlobalGame.tilesUndiscovered);
   myGlobalGame.board = myGlobalGame._randomBoardGenerator();
   myGlobalGame.referenceBoard = myGlobalGame._resetReferenceBoard();
 
@@ -145,6 +148,7 @@ function newLevel(){
   }
 
   else if($('.reference-board').hasClass('level-5')){
+    $('.tiles-left').html(0);
     $('.winner-modal').show();
   }
 

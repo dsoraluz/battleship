@@ -25,6 +25,7 @@ this.referenceBoard = [['null', 'null', 'null', 'null', 'null'], // 0
 
   this.initialTries = 25;
   this.hitCounter = 0;
+  this.tilesUndiscovered = 10;
 
 }
 
@@ -37,6 +38,7 @@ Battleship.prototype._sendHit = function (row, column) {
   if (this.board[row][column] === 'o'){
     this.referenceBoard[row][column] = 'x';
     this.hitCounter += 1;
+    this.tilesUndiscovered -= 1;
 
 
     console.log(this.referenceBoard);
