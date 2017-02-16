@@ -1,20 +1,23 @@
-var myGlobalGame;
-var numberOfTries;
+var myGlobalGame; //Global game variable.
+var numberOfTries; //Global number of tries variable.
 
+
+//Place everything that you want to be executed apon page load.
 $(document).ready(function(){
 
 
-  myGlobalGame = new Battleship();
-  myGlobalGame.board = myGlobalGame._randomBoardGenerator();
+  myGlobalGame = new Battleship(); //global game variable is initialized.
+  myGlobalGame.board = myGlobalGame._randomBoardGenerator(); //Level 1 game board is created.
 
-  numberOfTries = 25;
+  numberOfTries = 25; //Level 1 number of tries is set to 25.
 
 
   console.log(myGlobalGame.board);
-  renderReferenceBoard();
-  renderBoard();
-  loadSounds();
+  renderReferenceBoard(); //Player selection board is rendered on the browser.
+  renderBoard(); //For demomstration purpose: board that user will picking at.
+  loadSounds(); //Loads ion sounds;
 
+  //Hides Level, Winner, and Game Over modals.
 
   $('.game-over-modal').hide();
   $('.winner-modal').hide();
@@ -22,27 +25,11 @@ $(document).ready(function(){
   $('.level-modal').css('visibility', 'visible');
   $('.level-modal').fadeOut(5000);
 
-
-  $('.ship-cell').click(function(e){
-    ion.sound.play('water_droplet_2');
-  });
-
-  $('.cell').click(function(e){
-    ion.sound.play('water_droplet_2');
-
-    // var rowIndex = this.getAttribute('data-row');
-    // var colIndex = this.getAttribute('data-col');
-    //
-    // myGlobalGame._sendHit(rowIndex,colIndex);
-    //renderReferenceBoard();
-
-    // console.log("row = " + rowIndex + " column = " + colIndex);
-
-  });
 });
 
-function renderReferenceBoard(){
 
+//Renders the user interface.
+function renderReferenceBoard(){
 
   $('.reference-container').empty();
   var referenceHtml;
@@ -65,6 +52,7 @@ function renderReferenceBoard(){
 
   });
 
+  //listener for cell click event.
   $('.cell').click(function(e){
     ion.sound.play('water_droplet_2');
 
@@ -94,6 +82,7 @@ function renderReferenceBoard(){
   });
 }
 
+//Function that determines transition of a new level.
 function newLevel(){
 
   myGlobalGame.hitCounter = 0;
@@ -161,8 +150,9 @@ function newLevel(){
 
 }
 
+//For demonstration purposes...
 //Renders board with reveled tiles that user will pick at
-//Remove is desired.
+//Remove if desired.
 function renderBoard(){
 
   $('.ship-container').empty();
