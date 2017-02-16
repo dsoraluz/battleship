@@ -1,25 +1,73 @@
 body {
+  font-family: 'Varela Round', sans-serif;
   background-color: grey;
   color: #22313f;
+}
+
+.level-modal{
+  position: absolute;
+  font-size: 100pt;
+  visibility: hidden;
+
+  padding-left: 15px;
+  padding-right: 15px;
+
+  background: rgba(225, 226, 241, 0.90);
+  border-radius: 15px;
+  box-sizing: border-box;
+}
+
+
+.game-over-modal {
+  position: absolute;
+  font-size: 100pt;
+  visibility: visible;
+
+  padding-left: 15px;
+  padding-right: 15px;
+
+  background: rgba(225, 226, 241, 0.90);
+  border-radius: 15px;
+  box-sizing: border-box;
+}
+
+.winner-modal{
+  position: absolute;
+  font-size: 100pt;
+  visibility: visible;
+
+  padding-left: 15px;
+  padding-right: 15px;
+
+  background: rgba(225, 226, 241, 0.90);
+  border-radius: 15px;
+  box-sizing: border-box;
+}
+
+.centered {
+  position: fixed; /* or absolute */
+  top: 35%;
+  left: 35%;
 }
 
 
 .level-number-container {
   /*makes tag not super greedy*/
-  width: 100px;
+  width: 115px;
   border: 2px solid;
   border-radius: 15px;
   padding: 5px 20px;
   font-size: 30px;
   margin-bottom: 10px;
   float: left;
+
 }
 
 
 
 .tries-number-container {
   /*makes tag not super greedy*/
-  width: 115px;
+  width: 130px;
   border: 2px solid;
   border-radius: 15px;
   padding: 5px 20px;
@@ -52,7 +100,7 @@ body {
 
 
 .board {
-  background: #FE465C;
+  background: #2c3e50;
   border-radius: 15px;
   padding: 10px;
   width: 750px; /*good size for a game.*/

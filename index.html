@@ -4,20 +4,27 @@
     <meta charset="utf-8">
     <title></title>
     <link rel="stylesheet" href="css/styles.css" />
+    <link href="https://fonts.googleapis.com/css?family=Varela+Round" rel="stylesheet">
   </head>
   <body>
 
-    <div class = "game-banner">
+    <div class = "level-modal centered">
+      Level <span id = "level-modal-number">1</span>
+    </div>
 
+    <div class = "game-over-modal centered">
+      Game Over
+    </div>
+    <div class = "winner-modal centered">
+      Winner
     </div>
 
 
 
     <div class = "centering-container">
 
-      <div class = "level-number-container level-5-container">
-         Level: <span class = "level-number">1</span>
-
+      <div class = "level-number-container level-1-container">
+         Level: <span class= "level-number">1</span>
       </div>
 
       <div class = "tries-number-container">
@@ -38,7 +45,11 @@
 
       </div>
 
+
+
       <!--Computer Board -->
+      <!--Renders board with reveled tiles that user will pick at-->
+      <!--Comment out before before presenting-->
       <div class="board">
 
         <div class = "ship-container">
