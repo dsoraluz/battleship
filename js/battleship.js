@@ -1,3 +1,10 @@
+
+//Constructor for new game.
+//@Var board: random arrangement of tiles that reflects what the player will try to discover.
+//            used to demonstrate tile placment in User Interface.
+//@Var referenceBoard: board that will be used to reflect tiles that player has discovered.
+//@Var initialTries: the number of tries player has upon game initiation (Level 1).
+//@var hitCounter: to be used as a running counter for to determine level completion.
 function Battleship(){
                       // 0       1       2        3       4
   this.board =        [['o', 'null', 'null', 'null', 'o'], // 0
@@ -22,7 +29,9 @@ this.referenceBoard = [['null', 'null', 'null', 'null', 'null'], // 0
 }
 
 
-
+//Send hit function that checks users selection against game board and relects
+//the outcome on the referenceBoard if selection proves to be a tile.
+//Note: Hit counter is incremented each time there is a tile uncovered.
 Battleship.prototype._sendHit = function (row, column) {
 
   if (this.board[row][column] === 'o'){
@@ -32,22 +41,14 @@ Battleship.prototype._sendHit = function (row, column) {
 
     console.log(this.referenceBoard);
   }
-  else{
-    this.referenceBoard[row][column] = '?';
-    console.log("That was a miss.");
-    console.log(this.referenceBoard);
-  }
 
 
 };
 
 
 
-//Public function that user will interact to execute game logic.
-Battleship.prototype.play = function () {
 
-};
-
+//Function that resets the referenceBoard();
 Battleship.prototype._resetReferenceBoard = function () {
                                   // 0       1       2        3       4
           this.referenceBoard = [['null', 'null', 'null', 'null', 'null'],  // 0
@@ -61,7 +62,13 @@ Battleship.prototype._resetReferenceBoard = function () {
 };
 
 
-
+//Function that generates a random arrangement of 10 tiles by randomly selecting
+//one of 5 hard coded tiles arrangements.
+//Note: Randomization is acheived by randomly generating an index that references
+//      a position in that array of random boards.
+//Note: Randomization is further achieved by transposing the game board based on
+//      50/50 probalility.
+//Note: Returns the randomly chosen array.
 Battleship.prototype._randomBoardGenerator = function(){
                     // 0       1       2        3       4
 var boardOne =      [['o', 'null', 'null', 'null', 'o'], // 0

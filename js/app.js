@@ -43,6 +43,7 @@ $(document).ready(function(){
 
 function renderReferenceBoard(){
 
+
   $('.reference-container').empty();
   var referenceHtml;
 
@@ -70,10 +71,13 @@ function renderReferenceBoard(){
     var rowIndex = this.getAttribute('data-row');
     var colIndex = this.getAttribute('data-col');
 
+    if(!($(this).hasClass('hit-cell'))){
+
     myGlobalGame._sendHit(rowIndex,colIndex);
 
     numberOfTries -= 1;
     $('.tries').html(numberOfTries);
+
 
     if (myGlobalGame.hitCounter === 10){
       newLevel();
@@ -86,10 +90,12 @@ function renderReferenceBoard(){
 
     renderReferenceBoard();
     renderBoard();
+    }
   });
 }
 
 function newLevel(){
+
   myGlobalGame.hitCounter = 0;
   myGlobalGame.board = myGlobalGame._randomBoardGenerator();
   myGlobalGame.referenceBoard = myGlobalGame._resetReferenceBoard();
