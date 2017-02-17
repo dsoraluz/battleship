@@ -38,13 +38,18 @@ function renderReferenceBoard(){
   myGlobalGame.referenceBoard.forEach(function(row,rowIndex){
     row.forEach(function(col,colIndex){
       if(col === "x"){
-        referenceHtml = '<div class="cell hit-cell" data-row = "'+ rowIndex +'" data-col = "'+ colIndex +'"></div>';
+        referenceHtml = '<div class="cell pressed hit-cell" data-row = "'+ rowIndex +'" data-col = "'+ colIndex +'"></div>';
+        $('.reference-container').append(referenceHtml);
+        referenceHtml = '';
+      }
+      else if(col === "-"){
+        referenceHtml = '<div class="cell pressed" data-row = "'+ rowIndex +'" data-col = "'+ colIndex +'"></div>';
         $('.reference-container').append(referenceHtml);
         referenceHtml = '';
       }
 
       else {
-        referenceHtml = '<div class="cell" data-row = "'+ rowIndex +'" data-col = "'+ colIndex +'"></div>';
+        referenceHtml = '<div class="cell unpressed" data-row = "'+ rowIndex +'" data-col = "'+ colIndex +'"></div>';
         $('.reference-container').append(referenceHtml);
         referenceHtml = '';
       }
@@ -58,6 +63,11 @@ function renderReferenceBoard(){
 
     var rowIndex = this.getAttribute('data-row');
     var colIndex = this.getAttribute('data-col');
+
+    if($(this).hasClass('cell')){
+      $('.cell').toggleClass('pressed');
+      $(this).removeClass('cell');
+    }
 
     if(!($(this).hasClass('hit-cell'))){
 

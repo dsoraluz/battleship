@@ -43,6 +43,9 @@ Battleship.prototype._sendHit = function (row, column) {
 
     console.log(this.referenceBoard);
   }
+  else{
+    this.referenceBoard[row][column] = '-';
+  }
 
 
 };
