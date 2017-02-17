@@ -5,6 +5,14 @@ body {
 }
 
 
+/*Level and Tries container CSS*/
+
+.centered {
+  position: fixed; /* or absolute */
+  top: 35%;
+  left: 35%;
+}
+
 /* Level, Winner, Game Over modal CSS*/
 .level-modal{
   position: absolute;
@@ -21,8 +29,10 @@ body {
 
 
 .game-over-modal {
-  position: absolute;;
+  position: absolute;
+  top: 30%;
   font-size: 100pt;
+  text-align: center;
   visibility: visible;
 
   padding-left: 15px;
@@ -46,13 +56,7 @@ body {
   box-sizing: border-box;
 }
 
-/*Level and Tries container CSS*/
 
-.centered {
-  position: fixed; /* or absolute */
-  top: 35%;
-  left: 35%;
-}
 
 
 .level-number-container {

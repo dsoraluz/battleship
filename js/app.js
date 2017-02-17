@@ -81,6 +81,8 @@ function renderReferenceBoard(){
 
 
       if (myGlobalGame.hitCounter === 10){
+
+        setTimeout(function(){ renderReferenceBoard(); }, 3000);
         newLevel();
       }
 
@@ -121,7 +123,7 @@ function newLevel(){
     $('.level-modal').fadeOut(5000);
 
     $('.board').show();
-    $('.board').fadeOut(3500);
+    $('.board').fadeOut(3000);
   }
   else if($('.reference-board').hasClass('level-2')){
     $('.level-number-container').removeClass('level-2-container');
@@ -139,7 +141,7 @@ function newLevel(){
     $('.level-modal').fadeOut(5000);
 
     $('.board').show();
-    $('.board').fadeOut(3500);
+    $('.board').fadeOut(2500);
   }
   else if($('.reference-board').hasClass('level-3')){
     $('.level-number-container').removeClass('level-3-container');
@@ -157,7 +159,7 @@ function newLevel(){
     $('.level-modal').fadeOut(5000);
 
     $('.board').show();
-    $('.board').fadeOut(3500);
+    $('.board').fadeOut(2000);
 
   }
   else if($('.reference-board').hasClass('level-4')){
@@ -176,7 +178,7 @@ function newLevel(){
     $('.level-modal').fadeOut(5000);
 
     $('.board').show();
-    $('.board').fadeOut(3500);
+    $('.board').fadeOut(1500);
 
   }
 
