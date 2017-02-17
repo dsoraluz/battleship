@@ -171,7 +171,7 @@ body {
 }
 
 /*CSS for on cell hover (mouse over) */
-.cell:hover{
+.unpressed:hover{
 
 box-shadow: 0 1px 8px black;
 
