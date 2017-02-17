@@ -25,6 +25,8 @@ $(document).ready(function(){
   $('.level-modal').css('visibility', 'visible');
   $('.level-modal').fadeOut(5000);
 
+  $('.board').fadeOut(3500);
+
 });
 
 
@@ -110,10 +112,16 @@ function newLevel(){
     $('.reference-board').toggleClass('level-2');
     numberOfTries = 20;
     $('.tries').html(numberOfTries);
+    $('.tries').removeClass('level-1-text');
+    $('.tries').toggleClass('level-2-text');
+
 
     $('#level-modal-number').html(2);
     $('.level-modal').show();
     $('.level-modal').fadeOut(5000);
+
+    $('.board').show();
+    $('.board').fadeOut(3500);
   }
   else if($('.reference-board').hasClass('level-2')){
     $('.level-number-container').removeClass('level-2-container');
@@ -123,10 +131,15 @@ function newLevel(){
     $('.reference-board').toggleClass('level-3');
     numberOfTries = 18;
     $('.tries').html(numberOfTries);
+    $('.tries').removeClass('level-2-text');
+    $('.tries').toggleClass('level-3-text');
 
     $('#level-modal-number').html(3);
     $('.level-modal').show();
     $('.level-modal').fadeOut(5000);
+
+    $('.board').show();
+    $('.board').fadeOut(3500);
   }
   else if($('.reference-board').hasClass('level-3')){
     $('.level-number-container').removeClass('level-3-container');
@@ -136,10 +149,15 @@ function newLevel(){
     $('.reference-board').toggleClass('level-4');
     numberOfTries = 15;
     $('.tries').html(numberOfTries);
+    $('.tries').removeClass('level-3-text');
+    $('.tries').toggleClass('level-4-text');
 
     $('#level-modal-number').html(4);
     $('.level-modal').show();
     $('.level-modal').fadeOut(5000);
+
+    $('.board').show();
+    $('.board').fadeOut(3500);
 
   }
   else if($('.reference-board').hasClass('level-4')){
@@ -150,10 +168,15 @@ function newLevel(){
     $('.reference-board').toggleClass('level-5');
     numberOfTries = 12;
     $('.tries').html(numberOfTries);
+    $('.tries').removeClass('level-4-text');
+    $('.tries').toggleClass('level-5-text');
 
     $('#level-modal-number').html(5);
     $('.level-modal').show();
     $('.level-modal').fadeOut(5000);
+
+    $('.board').show();
+    $('.board').fadeOut(3500);
 
   }
 

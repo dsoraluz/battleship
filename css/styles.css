@@ -21,7 +21,7 @@ body {
 
 
 .game-over-modal {
-  position: absolute;
+  position: absolute;;
   font-size: 100pt;
   visibility: visible;
 
@@ -34,7 +34,7 @@ body {
 }
 
 .winner-modal{
-  position: absolute;
+  position: absolute;;
   font-size: 100pt;
   visibility: visible;
 
@@ -80,6 +80,13 @@ body {
   text-align: center;
 }
 
+/*CSS for game board on respective level.*/
+.level-1-text{color: #1AB8DF;}
+.level-2-text{color: #2ECC71;}
+.level-3-text{color: #F1C70F;}
+.level-4-text{color: #F39C12;}
+.level-5-text{color: #FE465C;}
+
 
 .tries-number-container {
   /*makes tag not super greedy*/
@@ -102,17 +109,17 @@ body {
 .level-5-container{border-color: #FE465C;}
 
 /*Container used to center User interface.. Could have achieved in an easier way.*/
-.centering-container {
+/*.centering-container {
   width: 1655px;
   margin-left: 105px;
-}
+}*/
 
 /*CSS for final submission*/
 /*Container used to center User interface.. Could have achieved in an easier way.*/
-/*.centering-container {
+.centering-container {
   width: 770px;
   margin-left: 500px;
-}*/
+}
 
 
 /*CSS for Player Board*/
@@ -131,8 +138,8 @@ body {
   border-radius: 15px;
   padding: 10px;
   width: 750px; /*good size for a game.*/
-  margin-left: 50px;
-  float: left;
+  /*float: left;*/
+  position: absolute;
 }
 
 /*CSS for cells*/
