@@ -1,10 +1,10 @@
-#Ramdom Access Memory: a game to excersize the mind.
+#Random Access Memory: a game to exercise the mind.
 
 This game is the result of an botched attempt to re-create the classic board game: Battleship.
 
-A game that I like to call "Random Access Memory" came is what was created.
+A game that I like to call "Random Access Memory" is what was created.
 
-Premise: A game where the player is briefly flashed a random arrangement of 10 tiles and then is given the chance to uncover them on a where all of therm are hidden.
+Premise: A game where the player is briefly flashed a random arrangement of 10 tiles and then is given the chance to uncover them on a where all of them are hidden.
 
 Difficulty: As the player clears the levels and progresses to the next, the margin of error to uncover all of the tiles decreases.
 
